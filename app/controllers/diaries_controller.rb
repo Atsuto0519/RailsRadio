@@ -5,7 +5,7 @@ class DiariesController < ApplicationController
   # GET /diaries
   # GET /diaries.json
   def index
-    @diaries = Diary.all
+    @diaries = Diary.all.order(params[:sort])
   end
 
   # GET /diaries/1
