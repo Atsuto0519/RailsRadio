@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lesson:</strong>
+  <%= @diary.id %>
+</p>
+
+<p>
+  <strong>タイトル:</strong>
+  <%= @diary.title %>
+</p>
+
+<p>
+  <strong>サブタイトル:</strong>
+  <%= @diary.subtitle %>
+</p>
+
+<% @pages_path.each do |page| %>
+  <tr>
+    <%= image_tag(page, :size => '335x481') %>
+  </tr>
+<% end %>
+
+<p>
+  <%= audio_tag(@audio_path, id:"audio", :controls => true) %>
+</p>
+
+<p>
+  <strong>登録日時:</strong>
+  <%= @diary.created_at %>
+</p>
+
+<p>
+  <strong>更新日時:</strong>
+  <%= @diary.updated_at %>
+</p>
+
+
+<!-- <%= link_to '編集', edit_diary_path(@diary) %>
+<%= link_to '削除', @diary, method: :delete, data: { confirm: '本当に削除しますか？' } %> -->
+<%= link_to '一覧へ戻る', diaries_path %>

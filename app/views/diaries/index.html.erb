@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>ラジオ英会話</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lesson</th>
+      <th>タイトル</th>
+      <th>登録日時</th>
+      <th>更新日時</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @diaries.each do |diary| %>
+      <tr>
+        <td><%= diary.id %></td>
+        <td><%= link_to diary.title, diary %></td>
+        <td><%= diary.created_at %></td>
+        <td><%= diary.updated_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
